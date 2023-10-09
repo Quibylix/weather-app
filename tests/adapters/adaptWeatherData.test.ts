@@ -7,12 +7,18 @@ describe("adaptWeatherData", () => {
     const data = {
       weather: [
         {
-          main: "Clouds",
-          description: "broken clouds",
           id: weatherConditionCodes.CLOUDS[0],
+          main: "Clouds",
         },
       ],
-      unused: "unused",
+      main: {
+        temp: 298.48,
+        pressure: 1015,
+        humidity: 64,
+      },
+      wind: {
+        speed: 0.62,
+      },
     };
 
     const res = adaptWeatherData(data);
@@ -22,6 +28,10 @@ describe("adaptWeatherData", () => {
         main: "Clouds",
         icon: WeatherIcons.CLOUDS,
       },
+      temperature: 298.48,
+      windSpeed: 0.62,
+      humidity: 64,
+      pressure: 1015,
     });
   });
 

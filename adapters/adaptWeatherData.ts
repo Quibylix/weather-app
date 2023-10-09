@@ -2,8 +2,20 @@ import { weatherConditionCodes, WeatherIcons } from "@/constants";
 
 export default function adaptWeatherData(data: any) {
   try {
-    if (typeof data.weather[0].main !== "string") {
-      throw new Error("Invalid data");
+    const isValidMain = typeof data.weather[0].main === "string";
+    const isValidTemp = typeof data.main.temp === "number";
+    const isValidWindSpeed = typeof data.wind.speed === "number";
+    const isValidHumidity = typeof data.main.humidity === "number";
+    const isValidPressure = typeof data.main.pressure === "number";
+
+    if (
+      !isValidMain ||
+      !isValidTemp ||
+      !isValidWindSpeed ||
+      !isValidHumidity ||
+      !isValidPressure
+    ) {
+      throw new Error("Error while adapting weather data");
     }
 
     return {
@@ -11,6 +23,10 @@ export default function adaptWeatherData(data: any) {
         main: data.weather[0].main as string,
         icon: getIconFromId(data.weather[0].id),
       },
+      temperature: data.main.temp as number,
+      windSpeed: data.wind.speed as number,
+      humidity: data.main.humidity as number,
+      pressure: data.main.pressure as number,
     };
   } catch {
     throw new Error("Error while adapting weather data");
