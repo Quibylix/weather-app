@@ -59,4 +59,12 @@ describe("WeatherIcon", () => {
 
     expect(img.getAttribute("src")).toContain("clouds.png");
   });
+
+  it("allows passing a custom className", () => {
+    render(<WeatherIcon className="custom-class" icon={WeatherIcons.CLOUDS} />);
+
+    const img = screen.getByAltText("Weather Icon");
+
+    expect(img.classList.contains("custom-class")).toBe(true);
+  });
 });

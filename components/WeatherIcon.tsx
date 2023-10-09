@@ -10,9 +10,10 @@ import Image from "next/image";
 
 type WeatherIconProps = {
   icon: WeatherIcons;
+  className?: string;
 };
 
-export default function WeatherIcon({ icon }: WeatherIconProps) {
+export default function WeatherIcon({ icon, className }: WeatherIconProps) {
   let src;
   switch (icon) {
     case WeatherIcons.THUNDERSTORM:
@@ -38,5 +39,13 @@ export default function WeatherIcon({ icon }: WeatherIconProps) {
       break;
   }
 
-  return <Image src={src} alt="Weather Icon" width={100} height={100} />;
+  return (
+    <Image
+      className={className}
+      src={src}
+      alt="Weather Icon"
+      width={100}
+      height={100}
+    />
+  );
 }
