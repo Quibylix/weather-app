@@ -1,3 +1,4 @@
+import { WeatherIcon } from "@/components";
 import { getWeatherFromCoords } from "@/services";
 
 export default async function HomePage() {
@@ -7,6 +8,7 @@ export default async function HomePage() {
     <main>
       <h1>Weather App</h1>
       <p>{res.weather.main}</p>
+      <WeatherIcon icon={res.weather.icon} />
     </main>
   );
 }
