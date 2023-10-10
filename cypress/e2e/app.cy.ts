@@ -30,18 +30,21 @@ describe("general app test", () => {
   it("renders the current pressure for the default location", () => {
     cy.visit("http://localhost:3000");
 
-    cy.contains(/Pressure: \d+ hPa/);
+    cy.get("h4").contains("Pressure");
+    cy.contains(/\d+ hPa/);
   });
 
   it("renders the current humidity for the default location", () => {
     cy.visit("http://localhost:3000");
 
-    cy.contains(/Humidity: \d+%/);
+    cy.get("h4").contains("Humidity");
+    cy.contains(/\d+%/);
   });
 
   it("renders the current wind speed for the default location", () => {
     cy.visit("http://localhost:3000");
 
-    cy.contains(/Wind speed: \d+\.\d{2} m\/s/);
+    cy.get("h4").contains("Wind speed");
+    cy.contains(/\d+\.\d{2} m\/s/);
   });
 });

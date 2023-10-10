@@ -1,4 +1,9 @@
-import { WeatherIcon } from "@/components";
+import {
+  HumidityIcon,
+  PressureIcon,
+  WeatherIcon,
+  WindIcon,
+} from "@/components";
 import { getWeatherFromCoords } from "@/services";
 import styles from "./page.module.css";
 
@@ -16,10 +21,22 @@ export default async function HomePage() {
       </h2>
       <h3 className={styles.weather}>{res.weather.main}</h3>
       <div className={styles.details}>
-        <div className={styles.detail}>Humidity: {res.humidity}%</div>
-        <div className={styles.detail}>Pressure: {res.pressure} hPa</div>
         <div className={styles.detail}>
-          Wind speed: {res.windSpeed.toFixed(2)} m/s
+          <HumidityIcon />
+          <h4>Humidity</h4>
+          <span className={styles.detailValue}>{res.humidity}%</span>
+        </div>
+        <div className={styles.detail}>
+          <PressureIcon />
+          <h4>Pressure</h4>
+          <span className={styles.detailValue}>{res.pressure} hPa</span>
+        </div>
+        <div className={styles.detail}>
+          <WindIcon />
+          <h4>Wind speed</h4>
+          <span className={styles.detailValue}>
+            {res.windSpeed.toFixed(2)} m/s
+          </span>
         </div>
       </div>
     </main>

@@ -43,6 +43,7 @@
   justify-content: center;
   gap: 1rem;
   width: 80%;
+  max-width: 40rem;
   margin: 3rem auto 0;
   flex-wrap: wrap;
 }
@@ -61,4 +62,13 @@
     var(--blue-berry) 30%,
     var(--deep-lavender)
   );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detailValue {
+  color: var(--white);
+  color: var(--gold);
 }
