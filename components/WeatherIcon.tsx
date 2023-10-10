@@ -46,6 +46,7 @@ export default function WeatherIcon({ icon, className }: WeatherIconProps) {
       alt="Weather Icon"
       width={100}
       height={100}
+      quality={100}
     />
   );
 }
