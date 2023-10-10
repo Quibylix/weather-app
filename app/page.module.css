@@ -1,0 +1,64 @@
+.page {
+  max-height: 100%;
+  width: 100%;
+  padding: 0 2rem 2rem;
+  overflow: auto;
+}
+
+.icon {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 20rem;
+  height: auto;
+}
+
+.temperature {
+  width: max-content;
+  margin: 1.5rem auto 0;
+  position: relative;
+  left: -1.5rem;
+}
+
+.temperatureValue {
+  font-size: 7rem;
+}
+
+.temperatureUnits {
+  position: absolute;
+  font-size: 2.5rem;
+  top: 0.7rem;
+  right: -2.7rem;
+}
+
+.weather {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 80%;
+  margin: 3rem auto 0;
+  flex-wrap: wrap;
+}
+
+.detail {
+  width: max-content;
+  flex-grow: 1;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  border: 0.1rem solid var(--white);
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--blue-berry);
+  background: linear-gradient(
+    to bottom left,
+    var(--blue-berry) 30%,
+    var(--deep-lavender)
+  );
+}

@@ -3,3 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html,
+body {
+  height: 100vh;
+  height: 100dvh;
+}
+
+body {
+  background: linear-gradient(to bottom, var(--navy), var(--deep-lavender));
+  color: var(--white);
+}
+
+:root {
+  --navy: #242a55;
+  --white: #fff;
+  --deep-lavender: #7848a7;
+  --gold: #fccc36;
+  --blue-berry: #422d90;
+}
