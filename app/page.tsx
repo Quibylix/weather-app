@@ -27,25 +27,25 @@ export default async function HomePage() {
         <span className={styles.temperatureUnits}>°C</span>
       </h2>
       <h3 className={styles.weather}>{res.weather.main}</h3>
-      <div className={styles.details}>
-        <div className={styles.detail}>
+      <section className={styles.details}>
+        <article className={styles.detail}>
           <HumidityIcon />
           <h4>Humidity</h4>
-          <span className={styles.detailValue}>{res.humidity}%</span>
-        </div>
-        <div className={styles.detail}>
+          <div className={styles.detailValue}>{res.humidity}%</div>
+        </article>
+        <article className={styles.detail}>
           <PressureIcon />
           <h4>Pressure</h4>
-          <span className={styles.detailValue}>{res.pressure} hPa</span>
-        </div>
-        <div className={styles.detail}>
+          <div className={styles.detailValue}>{res.pressure} hPa</div>
+        </article>
+        <article className={styles.detail}>
           <WindIcon />
           <h4>Wind speed</h4>
-          <span className={styles.detailValue}>
+          <div className={styles.detailValue}>
             {res.windSpeed.toFixed(2)} m/s
-          </span>
-        </div>
-      </div>
+          </div>
+        </article>
+      </section>
     </main>
   );
 }
