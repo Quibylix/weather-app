@@ -1,6 +1,7 @@
 import { weatherConditionCodes, WeatherIcons } from "@/constants";
+import { WeatherData } from "@/models";
 
-export default function adaptWeatherData(data: any) {
+export default function adaptWeatherData(data: any): WeatherData {
   try {
     const isValidMain = typeof data.weather[0].main === "string";
     const isValidTemp = typeof data.main.temp === "number";

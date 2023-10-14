@@ -1,4 +1,6 @@
-export default function adaptCityData(data: any) {
+import { CityData } from "@/models";
+
+export default function adaptCityData(data: any): CityData[] {
   if (!Array.isArray(data)) {
     throw new Error("Error while adapting city data");
   }
