@@ -4,14 +4,21 @@ import {
   WeatherIcon,
   WindIcon,
 } from "@/components";
-import { getWeatherFromCoords } from "@/services";
+import { getCityFromCoords, getWeatherFromCoords } from "@/services";
 import styles from "./page.module.css";
 
 export default async function HomePage() {
-  const res = await getWeatherFromCoords(33.44, -94.04);
+  const lat = 33.44;
+  const lon = -94.04;
+
+  const res = await getWeatherFromCoords(lat, lon);
+  const cityData = await getCityFromCoords(lat, lon);
 
   return (
     <main className={styles.page}>
+      <h2 className={styles.city}>
+        {cityData[0].city}, {cityData[0].country}
+      </h2>
       <WeatherIcon className={styles.icon} icon={res.weather.icon} />
       <h2 className={styles.temperature}>
         <span className={styles.temperatureValue}>

@@ -7,6 +7,12 @@ describe("general app test", () => {
     cy.title().should("include", "Weather App");
   });
 
+  it("renders the default location 'Texarkana'", () => {
+    cy.visit("http://localhost:3000");
+
+    cy.get("h2").contains("Texarkana, US");
+  });
+
   it("renders an icon with the alt text 'Weather Icon'", () => {
     cy.visit("http://localhost:3000");
 
