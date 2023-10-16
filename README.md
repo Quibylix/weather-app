@@ -32,7 +32,13 @@ yarn add
 pnpm i
 ```
 
-3. Run the development server:
+3. Add your OpenWeather API key to the `.env.local` file:
+
+```env
+WEATHER_API_KEY={YOUR_API_KEY}
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
