@@ -1,4 +1,4 @@
-import { getWeatherFromCoords } from "@/services";
+import { getWeatherFromCoords } from "@/services/server";
 
 export async function POST(req: Request) {
   let body;

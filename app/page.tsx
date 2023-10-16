@@ -5,7 +5,7 @@ import {
   WeatherIcon,
   WindIcon,
 } from "@/components";
-import { getWeatherFromCoords } from "@/services";
+import { getWeatherFromCoords } from "@/services/server";
 import styles from "./page.module.css";
 
 export default async function HomePage() {

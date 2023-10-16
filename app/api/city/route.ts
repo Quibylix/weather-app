@@ -1,4 +1,4 @@
-import { getCityFromCoords } from "@/services";
+import { getCityFromCoords } from "@/services/server";
 
 export async function POST(req: Request) {
   let body;
