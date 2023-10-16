@@ -24,7 +24,7 @@ export default function adaptWeatherData(data: any): WeatherData {
         main: data.weather[0].main as string,
         icon: getIconFromId(data.weather[0].id),
       },
-      temperature: data.main.temp as number,
+      temperature: (data.main.temp - 273.15) as number,
       windSpeed: data.wind.speed as number,
       humidity: data.main.humidity as number,
       pressure: data.main.pressure as number,

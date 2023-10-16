@@ -22,7 +22,7 @@ export default async function HomePage() {
       <WeatherIcon className={styles.icon} icon={res.weather.icon} />
       <h2 className={styles.temperature}>
         <span className={styles.temperatureValue}>
-          {(res.temperature - 273.15).toFixed(0)}
+          {res.temperature.toFixed(0)}
         </span>
         <span className={styles.temperatureUnits}>°C</span>
       </h2>
