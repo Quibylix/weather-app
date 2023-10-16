@@ -1,3 +1,5 @@
+"use client";
+
 import {
   City,
   HumidityIcon,
@@ -5,44 +7,43 @@ import {
   WeatherIcon,
   WindIcon,
 } from "@/components";
-import { getWeatherFromCoords } from "@/services/server";
+import { useWeatherContext } from "@/hooks";
 import styles from "./page.module.css";
 
-export default async function HomePage() {
-  const lat = 33.44;
-  const lon = -94.04;
+export default function HomePage() {
+  const { weather: weatherData } = useWeatherContext();
 
-  const res = await getWeatherFromCoords(lat, lon);
+  if (!weatherData) return;
 
   return (
     <main className={styles.page}>
       <h2 className={styles.city}>
         <City />
       </h2>
-      <WeatherIcon className={styles.icon} icon={res.weather.icon} />
+      <WeatherIcon className={styles.icon} icon={weatherData.weather.icon} />
       <h2 className={styles.temperature}>
         <span className={styles.temperatureValue}>
-          {res.temperature.toFixed(0)}
+          {weatherData.temperature.toFixed(0)}
         </span>
         <span className={styles.temperatureUnits}>°C</span>
       </h2>
-      <h3 className={styles.weather}>{res.weather.main}</h3>
+      <h3 className={styles.weather}>{weatherData.weather.main}</h3>
       <section className={styles.details}>
         <article className={styles.detail}>
           <HumidityIcon />
           <h4>Humidity</h4>
-          <div className={styles.detailValue}>{res.humidity}%</div>
+          <div className={styles.detailValue}>{weatherData.humidity}%</div>
         </article>
         <article className={styles.detail}>
           <PressureIcon />
           <h4>Pressure</h4>
-          <div className={styles.detailValue}>{res.pressure} hPa</div>
+          <div className={styles.detailValue}>{weatherData.pressure} hPa</div>
         </article>
         <article className={styles.detail}>
           <WindIcon />
           <h4>Wind speed</h4>
           <div className={styles.detailValue}>
-            {res.windSpeed.toFixed(2)} m/s
+            {weatherData.windSpeed.toFixed(2)} m/s
           </div>
         </article>
       </section>
