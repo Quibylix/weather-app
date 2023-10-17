@@ -28,7 +28,7 @@ describe("adaptWeatherData", () => {
         main: "Clouds",
         icon: WeatherIcons.CLOUDS,
       },
-      temperature: 298.48,
+      temperature: 298.48 - 273.15,
       windSpeed: 0.62,
       humidity: 64,
       pressure: 1015,
