@@ -44,17 +44,15 @@ function WeatherDetail({
   icon: Icon,
   isLoading,
 }: WeatherDetailProps) {
-  return (
+  return isLoading ? (
+    <div className={styles.skeletonWrapper}>
+      <Skeleton />
+    </div>
+  ) : (
     <article className={styles.detail}>
-      {isLoading ? (
-        <Skeleton />
-      ) : (
-        <>
-          <Icon />
-          <h4>{title}</h4>
-          <div className={styles.detailValue}>{value}</div>
-        </>
-      )}
+      <Icon />
+      <h4>{title}</h4>
+      <div className={styles.detailValue}>{value}</div>
     </article>
   );
 }
