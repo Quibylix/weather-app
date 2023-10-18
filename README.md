@@ -9,7 +9,7 @@ This is a learning project created with [Next JS](https://nextjs.org).
 
 Some of these features are not finished yet, but they will be soon.
 
-- [ ] Get the current weather in your area
+- [x] Get the current weather in your area
 - [ ] Get the weather in other areas
 - [ ] Get the weather in your area for the next 7 days
 - [ ] Get the weather in other areas for the next 7 days
