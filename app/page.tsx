@@ -2,12 +2,10 @@
 
 import {
   City,
-  HumidityIcon,
-  PressureIcon,
   Skeleton,
   SkeletonText,
+  WeatherDetails,
   WeatherIcon,
-  WindIcon,
 } from "@/components";
 import { useWeatherContext } from "@/hooks";
 import styles from "./page.module.css";
@@ -46,45 +44,7 @@ export default function HomePage() {
           <SkeletonText characters={8} />
         )}
       </h3>
-      <section className={styles.details}>
-        <article className={styles.detail}>
-          {weatherData ? (
-            <>
-              <HumidityIcon />
-              <h4>Humidity</h4>
-              <div className={styles.detailValue}>{weatherData.humidity}%</div>
-            </>
-          ) : (
-            <Skeleton />
-          )}
-        </article>
-        <article className={styles.detail}>
-          {weatherData ? (
-            <>
-              <PressureIcon />
-              <h4>Pressure</h4>
-              <div className={styles.detailValue}>
-                {weatherData.pressure} hPa
-              </div>
-            </>
-          ) : (
-            <Skeleton />
-          )}
-        </article>
-        <article className={styles.detail}>
-          {weatherData ? (
-            <>
-              <WindIcon />
-              <h4>Wind speed</h4>
-              <div className={styles.detailValue}>
-                {weatherData.windSpeed.toFixed(2)} m/s
-              </div>
-            </>
-          ) : (
-            <Skeleton />
-          )}
-        </article>
-      </section>
+      <WeatherDetails weatherData={weatherData} />
     </main>
   );
 }
