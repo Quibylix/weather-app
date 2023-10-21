@@ -1,5 +1,6 @@
 import { WeatherDetails, WeatherIcon } from "@/components";
 import { getWeatherFromCity } from "@/services/server";
+import { notFound } from "next/navigation";
 import styles from "./page.module.css";
 
 type CityPageProps = {
@@ -9,7 +10,9 @@ type CityPageProps = {
 export default async function CityPage({ params }: CityPageProps) {
   const { city } = params;
 
-  const weatherData = await getWeatherFromCity(decodeURIComponent(city));
+  const weatherData = await getWeatherFromCity(decodeURIComponent(city)).catch(
+    notFound,
+  );
 
   return (
     <main className={styles.page}>
