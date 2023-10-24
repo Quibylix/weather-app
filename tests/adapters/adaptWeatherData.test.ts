@@ -5,6 +5,10 @@ import { describe, expect, it } from "vitest";
 describe("adaptWeatherData", () => {
   it("returns weather data", () => {
     const data = {
+      name: "London",
+      sys: {
+        country: "GB",
+      },
       weather: [
         {
           id: weatherConditionCodes.CLOUDS[0],
@@ -24,6 +28,10 @@ describe("adaptWeatherData", () => {
     const res = adaptWeatherData(data);
 
     expect(res).toEqual({
+      location: {
+        city: "London",
+        country: "GB",
+      },
       weather: {
         main: "Clouds",
         icon: WeatherIcons.CLOUDS,

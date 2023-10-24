@@ -8,18 +8,26 @@ export default function adaptWeatherData(data: any): WeatherData {
     const isValidWindSpeed = typeof data.wind.speed === "number";
     const isValidHumidity = typeof data.main.humidity === "number";
     const isValidPressure = typeof data.main.pressure === "number";
+    const isValidCity = typeof data.name === "string";
+    const isValidCountry = typeof data.sys.country === "string";
 
     if (
       !isValidMain ||
       !isValidTemp ||
       !isValidWindSpeed ||
       !isValidHumidity ||
-      !isValidPressure
+      !isValidPressure ||
+      !isValidCity ||
+      !isValidCountry
     ) {
       throw new Error("Error while adapting weather data");
     }
 
     return {
+      location: {
+        city: data.name as string,
+        country: data.sys.country as string,
+      },
       weather: {
         main: data.weather[0].main as string,
         icon: getIconFromId(data.weather[0].id),
