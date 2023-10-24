@@ -13,7 +13,7 @@ export default function Weather({ weatherData, city }: WeatherProps) {
   return (
     <div className={styles.weather}>
       <h2 className={styles.city}>
-        {city ?? <span className={styles.skeleton} />}
+        {city ?? <SkeletonText characters={15} />}
       </h2>
       {weatherData ? (
         <WeatherIcon className={styles.icon} icon={weatherData.weather.icon} />

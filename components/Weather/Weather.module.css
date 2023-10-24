@@ -50,31 +50,3 @@
   color: var(--gold);
   text-transform: uppercase;
 }
-
-.skeleton {
-  animation: skeleton-loading 1s linear infinite;
-  border-radius: 0.25rem;
-  background: linear-gradient(
-    110deg,
-    #ececec0f 8%,
-    #f5f5f52f 18%,
-    #ececec0f 33%
-  );
-  background-size: 200% 100%;
-  display: inline-block;
-  width: 100%;
-  max-width: 20rem;
-}
-
-/* To set the height of the skeleton */
-.skeleton::before {
-  content: "A";
-  color: transparent;
-  user-select: none;
-}
-
-@keyframes skeleton-loading {
-  to {
-    background-position-x: -200%;
-  }
-}
