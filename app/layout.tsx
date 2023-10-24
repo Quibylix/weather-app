@@ -1,4 +1,3 @@
-import { PositionProvider, WeatherProvider } from "@/components";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
@@ -18,11 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
-        <PositionProvider>
-          <WeatherProvider>{children}</WeatherProvider>
-        </PositionProvider>
-      </body>
+      <body className={roboto.className}>{children}</body>
     </html>
   );
 }

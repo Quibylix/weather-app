@@ -1,11 +1,11 @@
 import { WeatherData } from "@/models";
 import { getWeatherFromCoords } from "@/services/client";
 import { useEffect, useState } from "react";
-import usePositionContext from "./usePositionContext";
+import usePosition from "./usePosition";
 
 export default function useWeatherData() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
-  const { position } = usePositionContext();
+  const position = usePosition();
 
   useEffect(() => {
     async function getWeatherData() {

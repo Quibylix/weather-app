@@ -1,10 +1,10 @@
 "use client";
 
 import { Weather } from "@/components";
-import { useWeatherContext } from "@/hooks";
+import { useWeatherData } from "@/hooks";
 
 export default function HomePage() {
-  const { weather: weatherData } = useWeatherContext();
+  const { weatherData } = useWeatherData();
 
   return (
     <main>
