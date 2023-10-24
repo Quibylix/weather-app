@@ -15,7 +15,7 @@ export default async function CityPage({ params }: CityPageProps) {
 
   return (
     <main>
-      <Weather weatherData={weatherData} city={city} />
+      <Weather weatherData={weatherData} />
     </main>
   );
 }

@@ -5,15 +5,18 @@ import WeatherIcon from "../WeatherIcon";
 import styles from "./Weather.module.css";
 
 interface WeatherProps {
-  city: string | null;
   weatherData: WeatherData | null;
 }
 
-export default function Weather({ weatherData, city }: WeatherProps) {
+export default function Weather({ weatherData }: WeatherProps) {
   return (
     <div className={styles.weather}>
       <h2 className={styles.city}>
-        {city ?? <SkeletonText characters={15} />}
+        {weatherData ? (
+          `${weatherData.location.city}, ${weatherData.location.country}`
+        ) : (
+          <SkeletonText characters={15} />
+        )}
       </h2>
       {weatherData ? (
         <WeatherIcon className={styles.icon} icon={weatherData.weather.icon} />
