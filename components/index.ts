@@ -1,4 +1,5 @@
 export * from "./Icons";
+export * from "./SearchBar";
 export * from "./Skeleton";
 export * from "./Weather";
 export * from "./WeatherDetails";
