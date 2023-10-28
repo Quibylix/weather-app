@@ -52,7 +52,15 @@ function getIconFromId(id: number) {
       return WeatherIcons.RAIN;
     case weatherConditionCodes.SNOW.includes(id):
       return WeatherIcons.SNOW;
-    case weatherConditionCodes.ATMOSPHERE.includes(id):
+    case weatherConditionCodes.MIST.includes(id):
+    case weatherConditionCodes.SMOKE.includes(id):
+    case weatherConditionCodes.HAZE.includes(id):
+    case weatherConditionCodes.DUST.includes(id):
+    case weatherConditionCodes.FOG.includes(id):
+    case weatherConditionCodes.SAND.includes(id):
+    case weatherConditionCodes.ASH.includes(id):
+    case weatherConditionCodes.SQUALL.includes(id):
+    case weatherConditionCodes.TORNADO.includes(id):
       return WeatherIcons.ATMOSPHERE;
     case weatherConditionCodes.CLEAR.includes(id):
       return WeatherIcons.CLEAR;
