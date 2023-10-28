@@ -1,4 +1,4 @@
-import { Weather } from "@/components";
+import { SearchBar, Weather } from "@/components";
 import { getWeatherFromCity } from "@/services/server";
 import { notFound } from "next/navigation";
 
@@ -14,8 +14,13 @@ export default async function CityPage({ params }: CityPageProps) {
   );
 
   return (
-    <main>
-      <Weather weatherData={weatherData} />
-    </main>
+    <>
+      <header>
+        <SearchBar />
+      </header>
+      <main>
+        <Weather weatherData={weatherData} />
+      </main>
+    </>
   );
 }

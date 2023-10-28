@@ -55,4 +55,10 @@ describe("general app test", () => {
     cy.get("h4").contains("Wind speed");
     cy.contains(/\d+\.\d{2} m\/s/);
   });
+
+  it("allows the user search for a location", () => {
+    cy.get("form[role='search']").get("input").type("London");
+    cy.get("form[role='search']").get("button").click();
+    cy.get("h2").contains("London, GB");
+  });
 });

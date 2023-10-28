@@ -57,4 +57,12 @@ describe("/weather/[city] test", () => {
     });
     cy.contains("404");
   });
+
+  it("allows the user search for a location", () => {
+    cy.visit("http://localhost:3000/weather/London");
+
+    cy.get("form[role='search']").get("input").type("Paris");
+    cy.get("form[role='search']").get("button").click();
+    cy.get("h2").contains("Paris, FR");
+  });
 });
